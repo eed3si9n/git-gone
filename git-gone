@@ -79,9 +79,9 @@ fi
 gone="$BRANCH/.*: gone]"
 if [ $delete -eq 1 ]; then
   if [ $force -eq 1 ]; then
-    git branch -vv | grep "$gone" | awk '{print $1}' | xargs git branch -D
+    git branch -vv | grep "$gone" | awk '{print $1}' | xargs --no-run-if-empty git branch -D
   else
-    git branch -vv | grep "$gone" | awk '{print $1}' | xargs git branch -d
+    git branch -vv | grep "$gone" | awk '{print $1}' | xargs --no-run-if-empty git branch -d
   fi
 elif [ $list -eq 1 ]; then
   git branch -vv | grep "$gone"
