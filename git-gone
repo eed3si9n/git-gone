@@ -76,6 +76,9 @@ if [ $prune -eq 1 ]; then
   git remote prune "$BRANCH"
 fi
 
+# Force English messages to make sure the "gone" pattern matches
+export LC_MESSAGES=C
+
 gone="$BRANCH/.*: gone]"
 if [ $delete -eq 1 ]; then
   if [ $force -eq 1 ]; then
