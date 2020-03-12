@@ -2,7 +2,7 @@
 
 usage() {
   cat <<EOF
-usage: git gone [-pldD] [<branch>=origin]
+usage: git gone [-pndD] [<branch>=origin]
 OPTIONS
 	-p	prune remote branch
 	-n	dry run: list the gone branches
